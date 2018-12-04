@@ -1,28 +1,39 @@
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+//
+//  pawn.hpp
+//  
+//
+//  Created by David Tiobang on 04/12/2018.
+//
 
-#ifndef PAWN_HPP
-#define PAWN_HPP
+#ifndef pawn_hpp
+#define pawn_hpp
+
+#include <stdio.h>
+#include <string>
+#include <vector>
 #include <cstddef>
 
-
-namespace dauphine {
-	class pawn 
-	{
-	public:
-		pawn(std::size_t row, std::size_t col/*, color c*/);
-		virtual ~pawn();
-
-		virtual bool can_move(std::size_t row, std::size_t col) const;
+namespace dauphine
+{
+    class pawn /*: public piece */
+    {
+        
+    public:
+        
+        pawn(std::size_t m_row,std::size_t m_col/*, color c */);
+        virtual ~pawn();
+        
+        bool can_move(std::size_t row,std::size_t col) const override;
+       
 	private:
 		bool aDejaJoue;
 	};
-}
-// TODO: add headers that you want to pre-compile here
+    
+    
 
-#endif //PAWN_H
+
+
+
+
+}
+#endif /* pawn_hpp */
